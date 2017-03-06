@@ -46,6 +46,15 @@ ENTER   = [\ \n]
 <YYINITIAL> {PAR_IZQ}	    { return new Symbol(sym.PAR_IZQ, yyline, yycolumn, null); }
 <YYINITIAL> {PAR_DER}	    { return new Symbol(sym.PAR_DER, yyline, yycolumn, null); }
 
+"=="                        {return new Symbol(sym.DIGUAL,yycolumn,yyline,yytext());}
+"!="                        {return new Symbol(sym.DIF,yycolumn,yyline,yytext());}
+">"                         {return new Symbol(sym.MAYOR,yycolumn,yyline,yytext());}
+"<"                         {return new Symbol(sym.MENOR,yycolumn,yyline,yytext());}
+">="                        {return new Symbol(sym.MAYORIGUAL,yycolumn,yyline,yytext());}
+"<="                        {return new Symbol(sym.MENORIGUAL,yycolumn,yyline,yytext());}
+"&&"                        {return new Symbol(sym.AND,yycolumn,yyline,yytext());}
+"||"                        {return new Symbol(sym.OR,yycolumn,yyline,yytext());}
+"!"                         {return new Symbol(sym.NOT,yycolumn,yyline,yytext());}
 <YYINITIAL> {SPACE}     { /*Espacios en blanco, ignorados*/ }
 <YYINITIAL> {ENTER}     { /*Saltos de linea, ignorados*/}
 
